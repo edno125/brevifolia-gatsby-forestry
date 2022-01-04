@@ -28,3 +28,18 @@ DOM API / GeoAPI / Own Class API / **"Online" API**
 **"Online" API:** Application running on a server, that receives requests for data and sends data back as response; **It can be called Web API or simply API**
 
 We don't use XML nowadays but JSON for APIs.
+
+### Our first AJAX CALL
+
+In JavaScript there are different ways to make API calls. Lets start with the old school one.
+
+**XML HTTP request function**
+
+    const request = new XMLHttpRequest();
+    
+    request.open('GET', 'https://restcountries.com/v3.1/name/armenia');
+    request.send();
+    
+    request.addEventListener('load', function() {
+      console.log(JSON.parse(this.responseText))
+    })
