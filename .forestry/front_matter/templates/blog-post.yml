@@ -24,3 +24,4 @@ fields:
   default: "/content/images/sarah-dorweiler-9Z1KRIfpBTM-unsplash.jpg"
 pages:
 - content/posts/java-script-async-js-day-1.md
+- content/posts/node-js-day-1.md
