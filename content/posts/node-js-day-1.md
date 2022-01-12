@@ -6,9 +6,7 @@ title: Node js | Day 1
 ---
 # Some terms.
 
-**LTS** - Long time support
-
-LTS can be **only** versions with even numbers like 12,14,16
+**LTS** - Long time support (LTS can be **only** versions with even numbers like 12,14,16)
 
 **NVM** - Node Version Manager
 
