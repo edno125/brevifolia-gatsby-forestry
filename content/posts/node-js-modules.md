@@ -4,18 +4,16 @@ hero_image: "/content/images/035575f2985fe451d86e717d73691e533a1a00545d7230900ed
 title: Node js | modules
 
 ---
-# Some terms.
+# Why do we need modules ?
 
-**LTS** - Long time support (LTS can be **only** versions with even numbers like 12,14,16)
+1. Repeat same code
+2. Compounding body from different modules
+3. Convenient development in team
+4. Encapsulation ( Isolation )
+5. Organizing and easy navigation in project
 
-**NVM** - Node Version Manager
+History started with native approach called IIFE (immediately invoked function expressions)
 
-**REPL -** READ EVAL PRINT LOOP (its like a console in browser.) To run that mode just type 
+![](/content/images/screenshot_4.jpg)
 
-    node
-
-Apart of that we can use js file as an argument like this:
-
-    node app.js
-
-So we can run some specific code trout node CLI
+Such implementation allows us to have some global object like APP which can't be affected with other js modules. That helps us to avoid rewriting global variables/objects/functions... 
