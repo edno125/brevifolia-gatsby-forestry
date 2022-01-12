@@ -15,3 +15,7 @@ LTS can be **only** versions with even numbers like 12,14,16
 **REPL -** READ EVAL PRINT LOOP (its like a console in browser.) To run that mode just type 
 
     node
+
+Apart of that we can use js file as an argument like this:
+
+    node app.js
