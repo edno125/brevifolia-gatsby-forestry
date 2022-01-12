@@ -1,7 +1,7 @@
 ---
 date: 2021-11-03T12:20:36.000+00:00
 hero_image: "/content/images/16-11-20-three-ways-to-write-asynchronous-javascript-code-blog.jpg"
-title: Java-Script / Async Js / Day 1
+title: Java-Script | Async Js
 author: ''
 
 ---
