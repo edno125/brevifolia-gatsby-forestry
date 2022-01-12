@@ -16,4 +16,9 @@ History started with native approach called IIFE (immediately invoked function e
 
 ![](/content/images/screenshot_4.jpg)
 
-Such implementation allows us to have some global object like APP which can't be affected with other js modules. That helps us to avoid rewriting global variables/objects/functions... 
+Such implementation allows us to have some global object like APP which can't be affected with other js code. That helps us to avoid rewriting global variables/objects/functions... 
+
+What is the cons of such approach ?
+
+* restricted order of including scripts
+* extra code for assignment 
