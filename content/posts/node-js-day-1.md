@@ -17,3 +17,5 @@ title: Node js | Day 1
 Apart of that we can use js file as an argument like this:
 
     node app.js
+
+So we can run some specific code trout node CLI
