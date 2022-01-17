@@ -65,3 +65,7 @@ Lets look at fetch example:
       .then(data => console.log(data)); // Finally
 
 Fetch returns a Promise whish in pending state and then it wait for async answer. With **then**    method we can specify what should happen after answer will be gotten. In first then which is interesting we get Pomise as well, so wee need to use second then to get result of that resolved promise and console that.
+
+**Important**
+
+We should remember that **then method of Promise** always return a promise. And fulfilled value which is accessible in next then will be the value which we have returned from previous then.
