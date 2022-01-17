@@ -43,3 +43,25 @@ In JavaScript there are different ways to make API calls. Lets start with the ol
     request.addEventListener('load', function() {
       console.log(JSON.parse(this.responseText))
     })
+
+### Promises and the Fetch API
+
+What are promises ?
+
+**Promise:** An object that is used as a placeholder for the future result of an asynchronous operation. Its like a container for an asynchronously delivered value. Or less formal its like a container for a future value.
+
+When we start ajax call there is no value yet. But we know that there will be some value in the future. And so we can use a promise to handle this future value.
+
+**Live cycle of a promise**
+
+Promise is time sensitive, this means that it can changes during the time. So in the very beginning we say that promise is PENDING (before the future value is available). Then is comes to SETTLED( Async task has hinished). And there are 2 type of SETTLED: fullfilled and rejected.
+
+And the one more important thing is that we can't change promise state. 
+
+Lets look at fetch example:
+
+    fetch('https://api.github.com/repos/javascript-tutorial') // Promise
+      .then(response => response.json()) This with first like becoume new Promise which needs THEN
+      .then(data => console.log(data)); // Finally
+
+Fetch returns a Promise whish in pending state and then it wait for async answer. With **then**    method we can specify what should happen after answer will be gotten. In first then which is interesting we get Pomise as well, so wee need to use second then to get result of that resolved promise and console that.
