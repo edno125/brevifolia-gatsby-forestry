@@ -69,3 +69,68 @@ Fetch returns a Promise whish in pending state and then it wait for async answer
 **Important**
 
 We should remember that **then method of Promise** always return a promise. And fulfilled value which is accessible in next then will be the value which we have returned from previous then.
+
+Only way when request can be rejected is when user lose his internet connection.
+
+There are two ways. to process this status. First we can pass second callback into then method, like this.
+
+    fetch('https://api.github.com/repos/javascript-tutorial') // Promise
+      .then(
+      	response => response.json(),
+        err=> alert(err)
+      ) This with first like becoume new Promise which needs THEN
+      .then(data => console.log(data)); // Finally
+
+And we will see that error from console will gone. Because we cough that error. 
+
+But there is a way to handle errors globally. So instead writing for each promise we can write at the end like.
+
+    fetch('https://api.github.com/repos/javascript-tutorial') // Promise
+      .then( response => response.json() ) This with first like becoume new Promise which needs THEN
+      .then( data => console.log(data) )
+      .catch( err => alert(err) ); // Finally
+
+There is another method called finally() which usually used when something needs to happen no matter what is result.
+
+    fetch('https://api.github.com/repos/javascript-tutorial') // Promise
+      .then( response => response.json() ) This with first like becoume new Promise which needs THEN
+      .then( data => console.log(data) )
+      .catch( err => alert(err) )
+      .finally( ()=>{
+      	//FOR EXAMPLE HIDE SPINNER
+      }); // Finally
+
+Why finally works because catch return promise.
+
+> It could be that we can got errors like 404,500 erc. but this won't mean that we have internet connection issue. So it such situations we catch is pointless.
+
+Lets review this situation:
+
+    fetch('https://api.github.com/repos/javascript-tutorial') // Promise
+      .then( response => {
+      	if(!response.ok)
+        	throw new Error(`Error ${response.status}`)
+      	return response.json()
+      }) This with first like becoume new Promise which needs THEN
+      .then( data => console.log(data) )
+      .catch( err => alert(err.message) ); // Finally
+
+Any error that happens in any of the callback functions here, so in any then handler, will immediately terminate(end) that then handler and will propagate down to the catch method here.
+
+err.message == throw new Error
+
+Lets pretend that we need to repeat some part of promise callback including error processing. How we can make it more readable ?
+
+    const getJSON = function (url, errorMsg = 'Something went wrong') {
+      return fetch(url).then(response => {
+        if (!response.ok) throw new Error(`${errorMsg} (${response.status})`);
+    
+        return response.json();
+      });
+    };
+    getJSON(
+      `https://restcountries.eu/rest/v2/name/${country}`,
+      'Country not found'
+    )
+      .then(data => { // Etc...
+    
