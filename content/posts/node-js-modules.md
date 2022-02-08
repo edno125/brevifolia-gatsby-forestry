@@ -18,7 +18,7 @@ History started with native approach called IIFE (immediately invoked function e
 
 ![](/content/images/screenshot_4.jpg)
 
-Such implementation allows us to have some global object like APP which can't be affected with other js code. That helps us to avoid rewriting global variables/objects/functions... 
+Such implementation allows us to have some global object like APP which can't be affected with other js code. That helps us to avoid rewriting global variables/objects/functions...
 
 What is the cons of such approach ?
 
@@ -54,3 +54,29 @@ Difference between Comman JS and ES Modules
 How to use Es moduels in Node JS ?
 
 ![](/content/images/screenshot_5.jpg)
+
+### What is circular dependency ?
+
+A circular dependency between Node. js modules **occurs when the modules require() each other**. This dependency results in an incomplete module being loaded, and mysterious problems later.
+
+### Example of using ES modules
+
+We should use either package.json or .mjs prefix
+
+![](/content/images/screenshot_5.jpg)
+
+![](/content/images/screenshot_6.jpg)
+
+or we can use
+
+![](/content/images/screenshot_9.jpg)
+
+![](/content/images/screenshot_10.jpg)
+
+### Asycn Imports
+
+Lets consider that "import" is just a global function which allows us to import something.
+
+![](/content/images/screenshot_11.jpg)
+
+Such approach allows us to import in different places depend on different conditions. And because we use promises when do import, our thread is not blocked. Moreover we can use try catch to process our result of importing.
